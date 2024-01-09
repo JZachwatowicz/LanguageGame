@@ -9,12 +9,12 @@ import Foundation
 
 struct LanguageGameModel<CardContent:Equatable> {
     private(set) var cards: [Card]
-    let cards_sp = ["Hola", "Adios", "Madre", "Fadre", "Hermana", "Hermano", "Tia", "Tio", "Gato", "Perro", "Caballo", "Pollo", "Manzana", "Agua", "Amor"]
+    let cards_sp = ["Hola", "Adios", "Madre", "Fadre", "Hermana", "Hermano", "Tia", "Tio", "Gato", "Perro", "Caballo", "Pollo", "Manzana", "Agua", "Amor", "Raton", "Rana", "Lluvia", "Niebla", "Sol", "Invierno", "Primavera", "Verano", "Otono"]
     
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent){
         cards = []
         var randomNumbers: [Int] = []
-        for number in 0..<max(2,numberOfPairsOfCards){
+        for _ in 0..<max(2,numberOfPairsOfCards){
             var number = Int.random(in: 0..<cards_sp.count)
             while randomNumbers.contains(number){
                 number = Int.random(in: 0..<cards_sp.count)

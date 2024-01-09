@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    var en_words: [String] = ["Hello", "Goodbye", "Mother", "Father", "Sister", "Brother", "Aunt", "Uncle", "Cat", "Dog", "Horse", "Chicken", "Apple", "Water", "Love"]
+    var en_words: [String] = ["Hello", "Goodbye", "Mother", "Father", "Sister", "Brother", "Aunt", "Uncle", "Cat", "Dog", "Horse", "Chicken", "Apple", "Water", "Love", "Mouse", "Frog", "Rain", "Fog", "Sun", "Winter", "Spring", "Summer", "Autumn"]
     
-    var colors: [Color] = [.green, .blue, .red]
+    var colors: [Color] = [.green, .blue, .orange, .red, .black]
     
-    var icons: [String] = ["☀️", "🦉", "🪓"]
+    var icons: [String] = ["☀️", "🐥", "🍎", "🦉", "🪓"]
     
     @EnvironmentObject var viewModel: LanguageGameViewModel
     
@@ -42,14 +42,29 @@ struct ContentView: View {
                         }
                     }.foregroundColor(viewModel.level.color)
                 }.onAppear(perform: {
-                    viewModel.shuffle()
+                    LevelView.self
                 })
                 
-                Button(action: {
-                    viewModel.shuffle()
-                }) {
-                    Text("SHUFFLE")
-                        .foregroundColor(viewModel.level.color)
+                HStack {
+                    Spacer()
+                    
+                    Button(action: {
+                        viewModel.changeAppLevel(level: viewModel.level)
+                    }) {
+                        Text("RESTART")
+                            .foregroundColor(viewModel.level.color)
+                    }
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        viewModel.shuffle()
+                    }) {
+                        Text("SHUFFLE")
+                            .foregroundColor(viewModel.level.color)
+                    }
+                    
+                    Spacer()
                 }
             }
         }
@@ -57,11 +72,15 @@ struct ContentView: View {
         var levelButtonDisplay: some View {
             return HStack {
                 HStack {
-                    LevelView(level: Level(color: colors[0], cardsNumber: en_words.count/4, words: en_words), sysIcon: icons[0], content: "Level 1")
+                    LevelView(level: Level(color: colors[0], cardsNumber: en_words.count/5, words: en_words), sysIcon: icons[0], content: "Level 1")
                     Spacer()
-                    LevelView(level: Level(color: colors[1], cardsNumber: en_words.count/2, words: en_words), sysIcon: icons[1], content: "Level 2")
+                    LevelView(level: Level(color: colors[1], cardsNumber: en_words.count/4, words: en_words), sysIcon: icons[1], content: "Level 2")
                     Spacer()
-                    LevelView(level: Level(color: colors[2], cardsNumber: en_words.count, words: en_words), sysIcon: icons[2], content: "Level 3")
+                    LevelView(level: Level(color: colors[2], cardsNumber: en_words.count/3, words: en_words), sysIcon: icons[2], content: "Level 3")
+                    Spacer()
+                    LevelView(level: Level(color: colors[3], cardsNumber: en_words.count/2, words: en_words), sysIcon: icons[3], content: "Level 4")
+                    Spacer()
+                    LevelView(level: Level(color: colors[4], cardsNumber: en_words.count, words: en_words), sysIcon: icons[4], content: "Level 5")
                 }
             }
         }
