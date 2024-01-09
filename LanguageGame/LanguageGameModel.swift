@@ -13,11 +13,18 @@ struct LanguageGameModel<CardContent:Equatable> {
     
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent){
         cards = []
-        
+        var randomNumbers: [Int] = []
+        for number in 0..<max(2,numberOfPairsOfCards){
+            var number = Int.random(in: 0..<cards_sp.count)
+            while randomNumbers.contains(number){
+                number = Int.random(in: 0..<cards_sp.count)
+            }
+            randomNumbers.append(number)
+        }
         for pairIndex in 0..<max(2,numberOfPairsOfCards){
-            let content = cardContentFactory(pairIndex)
+            let content = cardContentFactory(randomNumbers[pairIndex])
             cards.append(Card(content: content, matchId: pairIndex, isEnglish: true, id: "\(pairIndex+1)a"))
-            cards.append(Card(content: cards_sp[pairIndex] as! CardContent, matchId: pairIndex, isEnglish: false, id: "\(pairIndex+1)b"))
+            cards.append(Card(content: cards_sp[randomNumbers[pairIndex]] as! CardContent, matchId: pairIndex, isEnglish: false, id: "\(pairIndex+1)b"))
         }
     }
     
