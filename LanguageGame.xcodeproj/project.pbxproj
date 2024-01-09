@@ -14,6 +14,11 @@
 		3FE567E62B4D6B8A00693485 /* LanguageGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE567E52B4D6B8A00693485 /* LanguageGameTests.swift */; };
 		3FE567F02B4D6B8A00693485 /* LanguageGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE567EF2B4D6B8A00693485 /* LanguageGameUITests.swift */; };
 		3FE567F22B4D6B8A00693485 /* LanguageGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE567F12B4D6B8A00693485 /* LanguageGameUITestsLaunchTests.swift */; };
+		3FE567FF2B4D6C2F00693485 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE567FE2B4D6C2F00693485 /* CardView.swift */; };
+		3FE568012B4D6DB100693485 /* LanguageGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE568002B4D6DB100693485 /* LanguageGameModel.swift */; };
+		3FE568032B4D6F4200693485 /* LanguageGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE568022B4D6F4200693485 /* LanguageGameViewModel.swift */; };
+		3FE568052B4D716700693485 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE568042B4D716700693485 /* LevelView.swift */; };
+		3FE568072B4D71E900693485 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE568062B4D71E900693485 /* Level.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		3FE567EB2B4D6B8A00693485 /* LanguageGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE567EF2B4D6B8A00693485 /* LanguageGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameUITests.swift; sourceTree = "<group>"; };
 		3FE567F12B4D6B8A00693485 /* LanguageGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3FE567FE2B4D6C2F00693485 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		3FE568002B4D6DB100693485 /* LanguageGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameModel.swift; sourceTree = "<group>"; };
+		3FE568022B4D6F4200693485 /* LanguageGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameViewModel.swift; sourceTree = "<group>"; };
+		3FE568042B4D716700693485 /* LevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
+		3FE568062B4D71E900693485 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +104,15 @@
 		3FE567D32B4D6B8900693485 /* LanguageGame */ = {
 			isa = PBXGroup;
 			children = (
+				3FE568062B4D71E900693485 /* Level.swift */,
+				3FE568022B4D6F4200693485 /* LanguageGameViewModel.swift */,
+				3FE568042B4D716700693485 /* LevelView.swift */,
 				3FE567D42B4D6B8900693485 /* LanguageGameApp.swift */,
 				3FE567D62B4D6B8900693485 /* ContentView.swift */,
 				3FE567D82B4D6B8A00693485 /* Assets.xcassets */,
 				3FE567DA2B4D6B8A00693485 /* Preview Content */,
+				3FE567FE2B4D6C2F00693485 /* CardView.swift */,
+				3FE568002B4D6DB100693485 /* LanguageGameModel.swift */,
 			);
 			path = LanguageGame;
 			sourceTree = "<group>";
@@ -258,6 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FE567D72B4D6B8900693485 /* ContentView.swift in Sources */,
+				3FE568072B4D71E900693485 /* Level.swift in Sources */,
+				3FE568052B4D716700693485 /* LevelView.swift in Sources */,
+				3FE568032B4D6F4200693485 /* LanguageGameViewModel.swift in Sources */,
+				3FE568012B4D6DB100693485 /* LanguageGameModel.swift in Sources */,
+				3FE567FF2B4D6C2F00693485 /* CardView.swift in Sources */,
 				3FE567D52B4D6B8900693485 /* LanguageGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
