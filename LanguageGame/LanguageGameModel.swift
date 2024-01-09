@@ -56,7 +56,7 @@ struct LanguageGameModel<CardContent:Equatable> {
     }
     
     struct Card: Equatable, Identifiable {
-        var isFolded: Bool = true
+        var isFolded: Bool = false
         var isMatched: Bool = false
         var content: CardContent
         var matchId: Int

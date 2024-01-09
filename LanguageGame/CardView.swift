@@ -17,14 +17,12 @@ struct CardView: View {
     var body: some View {
         ZStack {
             Group {
-                RoundedRectangle(cornerRadius: 25)
-                    .fill(.white)
-                    .strokeBorder(lineWidth: 2)
-                Text(card.content).font(.title)
-            }.opacity(card.isFolded ? 1 : 0)
+                RoundedRectangle(cornerRadius: 25).fill(.white)
+                RoundedRectangle(cornerRadius: 25).strokeBorder(lineWidth: 2)
+                Text(card.content).font(.title3)
+            }
             RoundedRectangle(cornerRadius: 25)
-                .fill()
-                .opacity(card.isFolded ? 0 : 1)
+                .opacity(card.isFolded ? 0 : 0.20)
         }
         .opacity(card.isFolded || !card.isMatched ? 1 : 0)
         
