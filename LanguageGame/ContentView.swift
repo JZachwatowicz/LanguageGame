@@ -28,7 +28,7 @@ struct ContentView: View {
     }
     
     func cardDisplay() -> some View {
-            let columns = [GridItem(.flexible(minimum: 80, maximum: 150)), GridItem(.flexible(minimum: 80, maximum: 150)), GridItem(.flexible(minimum: 80, maximum: 150))]
+            let columns = [GridItem(.flexible(minimum: 80, maximum: 150)), GridItem(.flexible(minimum: 80, maximum: 150))]
             
             return VStack {
                 ScrollView {

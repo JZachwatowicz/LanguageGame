@@ -24,7 +24,6 @@ struct CardView: View {
             RoundedRectangle(cornerRadius: 25)
                 .opacity(card.isFolded ? 0 : 0.20)
         }
-        .opacity(card.isFolded || !card.isMatched ? 1 : 0)
-        
+        .opacity(card.isMatched ? 0 : 1)
     }
 }

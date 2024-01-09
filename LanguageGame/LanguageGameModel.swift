@@ -16,12 +16,13 @@ struct LanguageGameModel<CardContent:Equatable> {
         
         for pairIndex in 0..<max(2,numberOfPairsOfCards){
             let content = cardContentFactory(pairIndex)
-            cards.append(Card(content: content, matchId: pairIndex, id: "\(pairIndex+1)a"))
-            cards.append(Card(content: cards_sp[pairIndex] as! CardContent, matchId: pairIndex, id: "\(pairIndex+1)b"))
+            cards.append(Card(content: content, matchId: pairIndex, isEnglish: true, id: "\(pairIndex+1)a"))
+            cards.append(Card(content: cards_sp[pairIndex] as! CardContent, matchId: pairIndex, isEnglish: false, id: "\(pairIndex+1)b"))
         }
     }
     
-    mutating func choose(_ card: Card){
+    
+    mutating func choose(_ card: Card) {
         if let chosenIndex = cards.firstIndex(where: {$0.id == card.id}){
             if !cards[chosenIndex].isFolded && !cards[chosenIndex].isMatched{
                 if let potentialMatchedIndex = indexOfOneAndOnlyFaceUpCard{
@@ -60,6 +61,7 @@ struct LanguageGameModel<CardContent:Equatable> {
         var isMatched: Bool = false
         var content: CardContent
         var matchId: Int
+        var isEnglish: Bool
         
         var id: String
     }
