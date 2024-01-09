@@ -9,13 +9,15 @@ import Foundation
 
 struct LanguageGameModel<CardContent:Equatable> {
     private(set) var cards: [Card]
+    let cards_sp = ["Hola", "Adios", "Madre", "Fadre", "Hermana", "Hermano", "Tia", "Tio", "Gato", "Perro", "Caballo", "Pollo", "Manzana", "Agua", "Amor"]
     
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent){
         cards = []
+        
         for pairIndex in 0..<max(2,numberOfPairsOfCards){
             let content = cardContentFactory(pairIndex)
-            cards.append(Card(content:content, matchId: pairIndex, id: "\(pairIndex+1)a"))
-            cards.append(Card(content:content, matchId: pairIndex, id: "\(pairIndex+1)b"))
+            cards.append(Card(content: content, matchId: pairIndex, id: "\(pairIndex+1)a"))
+            cards.append(Card(content: cards_sp[pairIndex] as! CardContent, matchId: pairIndex, id: "\(pairIndex+1)b"))
         }
     }
     
@@ -23,7 +25,7 @@ struct LanguageGameModel<CardContent:Equatable> {
         if let chosenIndex = cards.firstIndex(where: {$0.id == card.id}){
             if !cards[chosenIndex].isFolded && !cards[chosenIndex].isMatched{
                 if let potentialMatchedIndex = indexOfOneAndOnlyFaceUpCard{
-                    if cards[chosenIndex].content == cards[potentialMatchedIndex].content {
+                    if cards[chosenIndex].matchId == cards[potentialMatchedIndex].matchId {
                         cards[chosenIndex].isMatched = true
                         cards[potentialMatchedIndex].isMatched = true
                     }

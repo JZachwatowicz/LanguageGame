@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    var en_words: [String] = ["Hello", "Mother", "Father", "Sister", "Brother"]
+    var en_words: [String] = ["Hello", "Goodbye", "Mother", "Father", "Sister", "Brother", "Aunt", "Uncle", "Cat", "Dog", "Horse", "Chicken", "Apple", "Water", "Love"]
     
     var colors: [Color] = [.green, .blue, .red]
     
@@ -26,14 +26,14 @@ struct ContentView: View {
     }
     
     func cardDisplay() -> some View {
-            let columns = [GridItem(.flexible(minimum: 20)), GridItem(.flexible(minimum: 20))]
+            let columns = [GridItem(.flexible(minimum: 80, maximum: 150)), GridItem(.flexible(minimum: 80, maximum: 150))]
             
             return VStack {
                 ScrollView {
                     LazyVGrid(columns: columns) {
                         ForEach(viewModel.cards) {card in
                             CardView(card: card)
-                                .aspectRatio(CGSize(width: 2, height: 3), contentMode: .fill)
+                                .aspectRatio(CGSize(width: 5, height: 3), contentMode: .fill)
                                 .onTapGesture {
                                     viewModel.choose(card)
                                 }
@@ -55,9 +55,9 @@ struct ContentView: View {
         var levelButtonDisplay: some View {
             return HStack {
                 HStack {
-                    LevelView(level: Level(color: colors[0], cardsNumber: en_words.count, words: en_words), sysIcon: en_words[0], content: "Level 1")
+                    LevelView(level: Level(color: colors[0], cardsNumber: en_words.count/4, words: en_words), sysIcon: en_words[0], content: "Level 1")
                     Spacer()
-                    LevelView(level: Level(color: colors[1], cardsNumber: en_words.count, words: en_words), sysIcon: en_words[0], content: "Level 2")
+                    LevelView(level: Level(color: colors[1], cardsNumber: en_words.count/2, words: en_words), sysIcon: en_words[0], content: "Level 2")
                     Spacer()
                     LevelView(level: Level(color: colors[2], cardsNumber: en_words.count, words: en_words), sysIcon: en_words[0], content: "Level 3")
                 }

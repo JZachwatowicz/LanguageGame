@@ -8,7 +8,7 @@
 import SwiftUI
 
 class LanguageGameViewModel: ObservableObject {
-    private static let en_words: [String] = ["Hello", "Mother", "Father", "Sister", "Brother"]
+    private static let en_words: [String] = ["Hello", "Goodbye", "Mother", "Father", "Sister", "Brother", "Aunt", "Uncle", "Cat", "Dog", "Horse", "Chicken", "Apple", "Water", "Love"]
     
     private static func createMemoGame() -> LanguageGameModel<String>{
             return LanguageGameModel<String>(numberOfPairsOfCards: en_words.count){ index in
